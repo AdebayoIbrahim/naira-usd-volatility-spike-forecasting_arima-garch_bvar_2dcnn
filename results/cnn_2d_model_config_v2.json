@@ -1,0 +1,37 @@
+{
+    "model_type": "Multivariate 2D-CNN",
+    "input_shape": [
+        4,
+        20,
+        1
+    ],
+    "features": [
+        "fx_log_return",
+        "fx_return_squared",
+        "brent_log_return",
+        "reserves_log_change"
+    ],
+    "window_size": 20,
+    "target": "next_period_fx_return_squared",
+    "target_training_transform": "log1p",
+    "inverse_transform": "expm1",
+    "spike_threshold": 0.10927724,
+    "validation_start": "2014-01-01",
+    "validation_end": "2020-12-31",
+    "spike_weight": 5.0,
+    "epochs_max": 100,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "random_seed": 42,
+    "loss": "Huber",
+    "shuffle": false,
+    "architecture": [
+        "Conv2D(32, kernel=(2,3), activation=relu)",
+        "MaxPooling2D(pool=(2,2))",
+        "Conv2D(64, kernel=(2,3), activation=relu)",
+        "Flatten",
+        "Dense(64, activation=relu)",
+        "Dropout(0.30)",
+        "Dense(1, activation=softplus)"
+    ]
+}

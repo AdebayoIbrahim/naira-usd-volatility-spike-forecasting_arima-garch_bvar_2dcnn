@@ -1,0 +1,2 @@
+model,p,d,q,aic,bic,loglik,training_start,training_end,training_observations,adf_statistic,adf_pvalue,ljung_box_pvalue_lag10,ljung_box_pvalue_lag20
+"ARIMA(0, 0, 1)",0,0,1,8065.018599857736,8083.417600513487,-4029.509299928868,2006-04-04,2020-12-31,3405,-56.852770489300006,0.0,0.9971889354884124,0.9750875739493746

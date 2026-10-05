@@ -1,0 +1,9 @@
+metric,value
+total_rows,4516.0
+training_rows,3404.0
+test_rows,1112.0
+training_spikes,79.0
+training_spike_rate,2.3207990599294948
+test_spikes,336.0
+test_spike_rate,30.215827338129497
+spike_threshold_r_squared,0.10927723756120744

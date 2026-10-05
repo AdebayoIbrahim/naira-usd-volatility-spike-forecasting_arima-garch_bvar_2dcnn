@@ -1,0 +1,10 @@
+metric,value
+training_observations,3405
+forecast_observations,1111
+forecast_start,2021-01-04 00:00:00
+forecast_end,2025-10-30 00:00:00
+spike_threshold,0.1092772375612074
+actual_spikes,335
+actual_spike_rate,30.15301530153015
+predicted_spikes,355
+predicted_spike_rate,31.95319531953195

@@ -1,0 +1,25 @@
+origin_date,segment_id,position_in_segment,reason
+2021-04-07,10,0,Insufficient within-segment history
+2021-04-08,10,1,Insufficient within-segment history
+2021-04-09,10,2,Insufficient within-segment history
+2021-04-12,10,3,Insufficient within-segment history
+2021-04-13,10,4,Insufficient within-segment history
+2021-04-14,10,5,Insufficient within-segment history
+2021-04-15,10,6,Insufficient within-segment history
+2021-04-16,10,7,Insufficient within-segment history
+2021-05-24,11,0,Insufficient within-segment history
+2021-05-25,11,1,Insufficient within-segment history
+2021-05-26,11,2,Insufficient within-segment history
+2021-05-27,11,3,Insufficient within-segment history
+2021-05-28,11,4,Insufficient within-segment history
+2021-06-01,11,5,Insufficient within-segment history
+2021-06-04,11,6,Insufficient within-segment history
+2021-06-07,11,7,Insufficient within-segment history
+2024-02-08,12,0,Insufficient within-segment history
+2024-02-13,12,1,Insufficient within-segment history
+2024-02-14,12,2,Insufficient within-segment history
+2024-02-15,12,3,Insufficient within-segment history
+2024-02-16,12,4,Insufficient within-segment history
+2024-02-19,12,5,Insufficient within-segment history
+2024-02-20,12,6,Insufficient within-segment history
+2024-02-23,12,7,Insufficient within-segment history

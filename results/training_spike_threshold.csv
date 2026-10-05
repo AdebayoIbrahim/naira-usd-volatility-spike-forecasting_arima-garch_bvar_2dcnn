@@ -1,0 +1,2 @@
+threshold_method,volatility_measure,training_end,spike_threshold
+90th_percentile,fx_vol_20obs,2020-12-31,0.24155010730881143

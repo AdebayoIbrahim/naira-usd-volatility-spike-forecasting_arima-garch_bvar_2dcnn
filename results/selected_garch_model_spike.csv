@@ -1,0 +1,2 @@
+model,distribution,p,q,aic,bic,loglik,convergence_flag,arch_lm_pvalue_before,ljung_box_std_pvalue_10,ljung_box_std_pvalue_20,ljung_box_squared_std_pvalue_10,ljung_box_squared_std_pvalue_20,arch_lm_pvalue_after,parameter_omega,parameter_alpha[1],parameter_beta[1],parameter_beta[2],parameter_nu
+"GARCH(1,2)",t,1,2,-28447.886341911486,-28417.221340818567,14228.943170955743,0,0.9999999999999865,0.9991254707776885,0.9928347818334833,0.9999999999999242,1.0,0.9999999999999232,3.121705922811956e-05,0.05,0.225,0.225,4.004376278491202

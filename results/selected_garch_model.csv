@@ -1,0 +1,2 @@
+p,q,distribution,AIC,BIC,LogLik,pre_garch_arch_pvalue,post_garch_arch_pvalue
+2,1,Student-t,-9404.326627065107,-9373.94871388175,4707.163313532554,0.9999999999999809,0.9999999999998762

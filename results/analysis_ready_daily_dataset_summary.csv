@@ -1,0 +1,7 @@
+item,value
+Original merged observations,4598
+Missing Brent observations removed,68
+Final analysis-ready observations,4530
+Number of long gaps (>5 days),12
+Study start,2006-04-03 00:00:00
+Study end,2025-10-31 00:00:00

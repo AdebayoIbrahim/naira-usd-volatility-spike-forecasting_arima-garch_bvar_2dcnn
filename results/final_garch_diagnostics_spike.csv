@@ -1,0 +1,6 @@
+diagnostic,statistic,p_value
+Ljung-Box standardized residuals lag 10,0.15068238487069752,0.9999999810006442
+Ljung-Box standardized residuals lag 20,1.1859010329789004,0.9999999991353188
+Ljung-Box squared standardized residuals lag 10,0.012874366289061634,0.9999999999999084
+Ljung-Box squared standardized residuals lag 20,0.02424335872145992,1.0
+ARCH-LM after GARCH,0.012914681259360572,0.999999999999907

@@ -1,0 +1,3 @@
+date,variable,original_value,corrected_value,reason
+2008-08-01,buying_rate,15.59,115.59,"Value inconsistent with immediately surrounding CBN observations. The CBN row shows buying=15.59, central=66.09 and selling=116.59, while adjacent observations are approximately 115.59, 116.09 and 116.59. Corrected based on surrounding official series and verification."
+2007-08-28,buying_rate,24.02,124.02,"Value inconsistent with immediately surrounding CBN observations. Adjacent observations are approximately 124.05 and 123.95, with corresponding central and selling rates around 124.5 and 125.0."

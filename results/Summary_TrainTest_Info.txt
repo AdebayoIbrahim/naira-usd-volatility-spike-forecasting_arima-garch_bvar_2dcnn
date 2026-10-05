@@ -1,0 +1,56 @@
+Final training spike threshold:
+0.2415501073088114
+
+Variables being used as predictors:
+ - fx_log_return
+ - brent_log_return
+ - reserves_log_change
+ - fx_vol_20obs
+
+Variables being used as targets:
+ - target_volatility
+ - target_spike
+
+Missing values in model inputs:
+fx_log_return           0
+brent_log_return        0
+reserves_log_change     0
+fx_vol_20obs           13
+target_volatility       0
+target_spike            0
+dtype: int64
+
+MASTER DATASET COUNTS:
+dataset
+train    3215
+test     1055
+Name: count, dtype: int64
+
+MULTIVARIATE DATASET COUNTS:
+dataset
+train    3205
+test     1052
+Name: count, dtype: int64
+
+MASTER DATE RANGES:
+
+TEST:
+Forecast origin: 2020-12-31 → 2025-10-30
+Forecast target: 2021-01-04 → 2025-10-31
+
+TRAIN:
+Forecast origin: 2006-05-05 → 2020-12-30
+Forecast target: 2006-05-08 → 2020-12-31
+
+TARGET SPIKE DISTRIBUTION:
+target_spike     0    1
+dataset                
+test           563  492
+train         2893  322
+
+MODEL INPUT SUMMARY:
+  dataset  master_rows  ...  spikes  spike_rate
+0   train         3215  ...     322    0.100156
+1    test         1055  ...     492    0.466351
+
+[2 rows x 6 columns]

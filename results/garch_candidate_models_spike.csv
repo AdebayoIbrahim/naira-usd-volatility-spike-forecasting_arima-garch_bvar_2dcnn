@@ -1,0 +1,18 @@
+model,p,q,distribution,aic,bic,loglik,convergence_flag,converged,optimization_message,warning,rank_by_aic
+"GARCH(1,1)-t",1,1,t,-29200.333795730523,-29175.80179485619,14604.166897865261,4,False,Inequality constraints incompatible,"The optimizer returned code 4. The message is:
+Inequality constraints incompatible
+See scipy.optimize.fmin_slsqp for code meaning.
+",1.0
+"GARCH(2,1)-t",2,1,t,-29191.792631939195,-29161.127630846277,14600.896315969598,4,False,Inequality constraints incompatible,"The optimizer returned code 4. The message is:
+Inequality constraints incompatible
+See scipy.optimize.fmin_slsqp for code meaning.
+",2.0
+"GARCH(2,2)-t",2,2,t,-29181.29392160891,-29144.49592029741,14596.646960804455,4,False,Inequality constraints incompatible,"The optimizer returned code 4. The message is:
+Inequality constraints incompatible
+See scipy.optimize.fmin_slsqp for code meaning.
+",3.0
+"GARCH(1,2)-t",1,2,t,-28447.886341911486,-28417.221340818567,14228.943170955743,0,True,Optimization terminated successfully,,4.0
+"GARCH(1,1)-normal",1,1,normal,-23329.575465197588,-23311.176464541837,11667.787732598794,0,True,Optimization terminated successfully,,5.0
+"GARCH(1,2)-normal",1,2,normal,-23320.124785431573,-23295.59278455724,11664.062392715787,0,True,Optimization terminated successfully,,6.0
+"GARCH(2,1)-normal",2,1,normal,-23312.27177075774,-23287.739769883407,11660.13588537887,0,True,Optimization terminated successfully,,7.0
+"GARCH(2,2)-normal",2,2,normal,-23296.607786576078,-23265.94278548316,11653.303893288039,0,True,Optimization terminated successfully,,8.0

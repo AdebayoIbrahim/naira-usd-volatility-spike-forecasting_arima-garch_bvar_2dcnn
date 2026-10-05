@@ -1,0 +1,2 @@
+training_end,method,percentile,threshold_r_squared,absolute_stored_log_return_threshold,equivalent_raw_log_return_threshold,approx_price_movement_percent,training_nonzero_returns,training_spike_count
+2020-12-31,90th percentile of squared FX returns among non-zero training returns,90,0.10927723756120744,0.33057107792607543,0.0033057107792607543,0.3311180666766722,785,79

@@ -1,0 +1,2 @@
+model,training_end,forecast_observations,lambda,lag_order,MAE,MSE,RMSE,TN,FP,FN,TP,Accuracy,Precision,Recall,F1,AUC_volatility,AUC_probability,mean_probability,actual_spikes,predicted_spikes,spike_threshold,probability_cutoff
+BVAR(8)-Full-Lambda0.10,2020-12-31,1083,0.1,8,8.195628976606477,2681.512171770423,51.78331943560998,215,541,124,203,0.38596491228070173,0.2728494623655914,0.6207951070336392,0.3790849673202614,0.48246848858469654,0.46759057003705323,0.5077096314593071,327,744,0.10927724,0.5

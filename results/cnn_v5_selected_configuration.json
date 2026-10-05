@@ -1,0 +1,21 @@
+{
+    "selected_model": "CNN_A_kernel_2x3",
+    "selected_kernel": "(2, 3)",
+    "selected_probability_threshold": 0.32839295268058777,
+    "spike_threshold": 0.10927724,
+    "window_size": 20,
+    "features": [
+        "fx_log_return",
+        "fx_return_squared",
+        "brent_log_return",
+        "reserves_log_change"
+    ],
+    "training_period": "2006-05-09 to 2013-12-31",
+    "validation_period": "2014-01-02 to 2020-12-31",
+    "scaler_fit_period": "through 2013-12-31",
+    "selection_rule": [
+        "PR_AUC",
+        "ROC_AUC",
+        "F1"
+    ]
+}
