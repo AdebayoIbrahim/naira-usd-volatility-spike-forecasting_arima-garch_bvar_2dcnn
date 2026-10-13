@@ -1,0 +1,2 @@
+Model,Kernel,Window,Test Period,MAE,RMSE,Accuracy,Precision,Recall,Specificity,F1,ROC-AUC,PR-AUC,Brier,TN,FP,FN,TP,Actual Spikes,Predicted Spikes
+CNN-A-final,2x3,20,2021-01-04 to 2025-10-30,7.9804,52.7348,0.824,0.8641,0.4984,0.9658,0.6322,0.8601,0.7814,0.1588,707,25,160,159,319,184

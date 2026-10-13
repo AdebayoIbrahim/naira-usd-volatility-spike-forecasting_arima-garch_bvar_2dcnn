@@ -1,0 +1,4 @@
+period,observations,spikes,non_spikes,spike_rate_percent,non_spike_rate_percent
+Training (2006–2020),3395,79,3316,2.33,97.67
+Test (2021–2025),1108,334,774,30.14,69.86
+Overall,4503,413,4090,9.17,90.83

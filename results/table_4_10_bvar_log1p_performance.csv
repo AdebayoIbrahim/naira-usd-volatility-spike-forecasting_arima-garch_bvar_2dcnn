@@ -1,0 +1,20 @@
+Metric,Value
+Number of Forecasts,1083.0
+Actual Spikes,327.0
+Predicted Spikes,361.0
+Mean Spike Probability,0.536127
+MAE,7.669855
+MSE,2678.40865
+RMSE,51.753344
+Accuracy,0.857802
+Precision,0.739612
+Recall,0.816514
+Specificity,0.875661
+Balanced Accuracy,0.846088
+F1-score,0.776163
+ROC-AUC (Probability),0.912023
+ROC-AUC (Volatility),0.912286
+True Negatives,662.0
+False Positives,94.0
+False Negatives,60.0
+True Positives,267.0

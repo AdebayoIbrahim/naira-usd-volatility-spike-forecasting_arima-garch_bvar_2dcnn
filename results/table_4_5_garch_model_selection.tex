@@ -1,0 +1,18 @@
+\begin{table}
+\caption{GARCH Candidate Model Selection}
+\label{tab:4.5}
+\begin{tabular}{llrrrrrr}
+\toprule
+Model & Distribution & AIC & BIC & Converged & Ljung_Box_pvalue_Residuals & Ljung_Box_pvalue_Squared_Residuals & Selected_by_AIC \\
+\midrule
+GARCH(1,1)-normal & normal & 7989.632758 & 8008.031758 & True & 0.999763 & 1.000000 & False \\
+GARCH(1,1)-t & t & -9941.054173 & -9916.522172 & True & 1.000000 & 1.000000 & False \\
+GARCH(1,2)-normal & normal & 7986.014286 & 8010.546287 & True & 0.999617 & 1.000000 & False \\
+GARCH(1,2)-t & t & -9942.347043 & -9911.682042 & True & 1.000000 & 1.000000 & False \\
+GARCH(2,1)-normal & normal & 7991.632757 & 8016.164758 & True & 0.999763 & 1.000000 & False \\
+GARCH(2,1)-t & t & -10030.265225 & -9999.600224 & True & 1.000000 & 1.000000 & True \\
+GARCH(2,2)-normal & normal & 7988.014286 & 8018.679287 & True & 0.999617 & 1.000000 & False \\
+GARCH(2,2)-t & t & -9940.916745 & -9904.118744 & True & 1.000000 & 1.000000 & False \\
+\bottomrule
+\end{tabular}
+\end{table}

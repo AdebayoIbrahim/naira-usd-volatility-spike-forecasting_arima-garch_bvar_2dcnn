@@ -1,0 +1,13 @@
+\begin{table}
+\caption{Continuous volatility forecasting performance of the ARIMA-GARCH, BVAR and multivariate 2D-CNN models on common out-of-sample target dates.}
+\label{tab:continuous_volatility_comparison}
+\begin{tabular}{lrllrrrrrrr}
+\toprule
+Model & Observations & Start & End & MAE & MSE & RMSE & MAE Rank & RMSE Rank & Average Rank & Overall Rank \\
+\midrule
+ARIMA(0,0,1)-GARCH(2,1)-t & 1050 & 2021-01-05 & 2025-10-30 & 9.1401 & 2686.0299 & 51.8269 & 3 & 1 & 2.0000 & 2 \\
+BVAR(8)-log1p & 1050 & 2021-01-05 & 2025-10-30 & 7.8792 & 2762.2108 & 52.5567 & 1 & 2 & 1.5000 & 1 \\
+Multivariate 2D-CNN-A & 1050 & 2021-01-05 & 2025-10-30 & 7.9880 & 2783.6107 & 52.7599 & 2 & 3 & 2.5000 & 3 \\
+\bottomrule
+\end{tabular}
+\end{table}

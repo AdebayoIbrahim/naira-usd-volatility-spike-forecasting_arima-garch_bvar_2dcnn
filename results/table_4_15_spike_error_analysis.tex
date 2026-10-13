@@ -1,0 +1,13 @@
+\begin{table}
+\caption{Spike detection errors and classification outcomes for the three forecasting models on common out-of-sample target dates.}
+\label{tab:spike_error_analysis}
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+Model & Observations & Actual Spikes & Predicted Spikes & TN & FP & FN & TP & Precision & Recall & False Positive Rate & False Negative Rate \\
+\midrule
+ARIMA(0,0,1)-GARCH(2,1)-t & 1050 & 319 & 335 & 649 & 82 & 66 & 253 & 0.7552 & 0.7931 & 0.1122 & 0.2069 \\
+BVAR(8)-log1p & 1050 & 319 & 350 & 640 & 91 & 60 & 259 & 0.7400 & 0.8119 & 0.1245 & 0.1881 \\
+Multivariate 2D-CNN-A & 1050 & 319 & 184 & 706 & 25 & 160 & 159 & 0.8641 & 0.4984 & 0.0342 & 0.5016 \\
+\bottomrule
+\end{tabular}
+\end{table}

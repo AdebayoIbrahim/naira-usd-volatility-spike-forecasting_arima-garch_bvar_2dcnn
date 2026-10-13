@@ -1,0 +1,9 @@
+Model,p,q,Distribution,AIC,BIC,LogLikelihood,Converged,Ljung_Box_pvalue_Residuals,Ljung_Box_pvalue_Squared_Residuals,Selected_by_AIC
+"GARCH(1,1)-normal",1,1,normal,7989.632758,8008.031758,-3991.816379,True,0.999763,1.0,False
+"GARCH(1,1)-t",1,1,t,-9941.054173,-9916.522172,4974.527087,True,1.0,1.0,False
+"GARCH(1,2)-normal",1,2,normal,7986.014286,8010.546287,-3989.007143,True,0.999617,1.0,False
+"GARCH(1,2)-t",1,2,t,-9942.347043,-9911.682042,4976.173521,True,1.0,1.0,False
+"GARCH(2,1)-normal",2,1,normal,7991.632757,8016.164758,-3991.816379,True,0.999763,1.0,False
+"GARCH(2,1)-t",2,1,t,-10030.265225,-9999.600224,5020.132613,True,1.0,1.0,True
+"GARCH(2,2)-normal",2,2,normal,7988.014286,8018.679287,-3989.007143,True,0.999617,1.0,False
+"GARCH(2,2)-t",2,2,t,-9940.916745,-9904.118744,4976.458373,True,1.0,1.0,False

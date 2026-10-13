@@ -1,0 +1,5 @@
+,FX Log Return,FX Squared Return,Brent Log Return,Reserves Log Change
+FX Log Return,1.0,0.537958,-0.002996,-0.000654
+FX Squared Return,0.537958,1.0,0.012896,-0.007186
+Brent Log Return,-0.002996,0.012896,1.0,0.016999
+Reserves Log Change,-0.000654,-0.007186,0.016999,1.0

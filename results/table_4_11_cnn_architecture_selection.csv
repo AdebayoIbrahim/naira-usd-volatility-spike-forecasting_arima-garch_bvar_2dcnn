@@ -1,0 +1,3 @@
+Model,Kernel,Validation Observations,Actual Spikes,Predicted Spikes,Probability Cutoff,MAE,RMSE,Accuracy,Precision,Recall,F1-score,Specificity,ROC-AUC,PR-AUC,Brier Score,Selected
+CNN-A,"(2, 3)",1646,29,62,0.328393,1.185718,32.240239,0.965371,0.274194,0.586207,0.373626,0.972171,0.833237,0.187065,0.025071,True
+CNN-B,"(1, 3)",1646,29,45,0.451944,1.18557,32.240343,0.970838,0.288889,0.448276,0.351351,0.98021,0.744759,0.180326,0.025071,False

@@ -1,0 +1,362 @@
+Shrinkage (Î»),MAE,RMSE,Accuracy,Precision,Recall,F1-score,ROC-AUC (Probability),ROC-AUC (Volatility),Mean Spike Probability,Predicted Spikes,Actual Spikes
+0.1,0.321002,1.742307,0.484211,0.082508,0.609756,0.145349,0.542164,0.543962,0.505157,303,41
+0.1,2.926679,48.816158,0.581232,0.066879,0.777778,0.123167,0.783358,0.784948,0.502929,314,27
+0.1,1.236526,8.537896,0.263103,0.002837,1.0,0.005658,0.752626,0.752101,0.509575,705,2
+0.2,3.159972,49.608542,0.561625,0.06135,0.740741,0.113314,0.74438,0.758424,0.502065,326,27
+0.2,1.345409,8.673484,0.314465,0.003049,1.0,0.006079,0.698529,0.699055,0.509504,656,2
+0.2,0.347461,1.718891,0.461404,0.076433,0.585366,0.135211,0.550694,0.547951,0.508913,314,41
+0.5,3.339528,50.167794,0.546218,0.059347,0.740741,0.10989,0.704162,0.706184,0.503145,337,27
+0.5,0.389478,1.711116,0.459649,0.078864,0.609756,0.139665,0.54968,0.552169,0.51254,317,41
+0.5,1.429035,8.814297,0.32914,0.003115,1.0,0.006211,0.640756,0.645483,0.50947,642,2
+1.0,0.404138,1.70962,0.464912,0.074194,0.560976,0.131054,0.541703,0.545346,0.512735,310,41
+1.0,3.384675,50.291116,0.537815,0.055718,0.703704,0.103261,0.695698,0.700846,0.503604,341,27
+1.0,1.460049,8.848347,0.32914,0.003115,1.0,0.006211,0.616071,0.621324,0.509724,642,2
+from pathlib import Path
+import pandas as pd
+import numpy as np
+
+
+# ============================================================
+# CHAPTER 4 - BVAR RESULTS
+# [TABLE 4.8 HERE]
+# BVAR Shrinkage Validation
+# ============================================================
+
+
+# ------------------------------------------------------------
+# 1. Project paths
+# ------------------------------------------------------------
+PROJECT_ROOT = Path.cwd()
+
+INPUT_PATH = (
+    PROJECT_ROOT
+    / "results"
+    / "bvar8_lambda_multiblock_validation_metrics.csv"
+)
+
+RESULTS_DIR = PROJECT_ROOT / "results"
+RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# ------------------------------------------------------------
+# 2. Check file
+# ------------------------------------------------------------
+if not INPUT_PATH.exists():
+    raise FileNotFoundError(
+        f"Validation file not found:\n{INPUT_PATH}"
+    )
+
+
+# ------------------------------------------------------------
+# 3. Read file
+# ------------------------------------------------------------
+df = pd.read_csv(INPUT_PATH)
+
+print("\nFile being used:")
+print(INPUT_PATH)
+
+print("\nColumns found:")
+print(df.columns.tolist())
+
+
+# ------------------------------------------------------------
+# 4. Find useful columns safely
+# ------------------------------------------------------------
+def find_column(dataframe, candidates, required=False):
+
+    # Exact match first
+    for candidate in candidates:
+        for column in dataframe.columns:
+            if column.lower().strip() == candidate.lower():
+                return column
+
+    # Partial match
+    for candidate in candidates:
+        for column in dataframe.columns:
+            if candidate.lower() in column.lower():
+                return column
+
+    if required:
+        raise ValueError(
+            f"Could not identify a required column.\n"
+            f"Checked: {candidates}\n"
+            f"Available: {dataframe.columns.tolist()}"
+        )
+
+    return None
+
+
+lambda_col = find_column(
+    df,
+    ["lambda", "shrinkage", "tightness"],
+    required=True
+)
+
+mae_col = find_column(
+    df,
+    ["mae"],
+    required=True
+)
+
+rmse_col = find_column(
+    df,
+    ["rmse"],
+    required=True
+)
+
+accuracy_col = find_column(
+    df,
+    ["accuracy"],
+    required=False
+)
+
+precision_col = find_column(
+    df,
+    ["precision"],
+    required=False
+)
+
+recall_col = find_column(
+    df,
+    ["recall"],
+    required=False
+)
+
+f1_col = find_column(
+    df,
+    ["f1"],
+    required=False
+)
+
+auc_prob_col = find_column(
+    df,
+    ["auc_prob", "probability_auc", "roc_auc_probability"],
+    required=False
+)
+
+auc_vol_col = find_column(
+    df,
+    ["auc_vol", "volatility_auc", "roc_auc_volatility"],
+    required=False
+)
+
+mean_prob_col = find_column(
+    df,
+    ["mean_prob", "mean_probability"],
+    required=False
+)
+
+predicted_spikes_col = find_column(
+    df,
+    ["predicted_spikes"],
+    required=False
+)
+
+actual_spikes_col = find_column(
+    df,
+    ["actual_spikes"],
+    required=False
+)
+
+
+# ------------------------------------------------------------
+# 5. Build presentation table
+# ------------------------------------------------------------
+table = pd.DataFrame()
+
+table["Shrinkage (λ)"] = pd.to_numeric(
+    df[lambda_col],
+    errors="coerce"
+)
+
+table["MAE"] = pd.to_numeric(
+    df[mae_col],
+    errors="coerce"
+)
+
+table["RMSE"] = pd.to_numeric(
+    df[rmse_col],
+    errors="coerce"
+)
+
+
+if accuracy_col is not None:
+    table["Accuracy"] = pd.to_numeric(
+        df[accuracy_col],
+        errors="coerce"
+    )
+
+if precision_col is not None:
+    table["Precision"] = pd.to_numeric(
+        df[precision_col],
+        errors="coerce"
+    )
+
+if recall_col is not None:
+    table["Recall"] = pd.to_numeric(
+        df[recall_col],
+        errors="coerce"
+    )
+
+if f1_col is not None:
+    table["F1-score"] = pd.to_numeric(
+        df[f1_col],
+        errors="coerce"
+    )
+
+if auc_prob_col is not None:
+    table["ROC-AUC (Probability)"] = pd.to_numeric(
+        df[auc_prob_col],
+        errors="coerce"
+    )
+
+if auc_vol_col is not None:
+    table["ROC-AUC (Volatility)"] = pd.to_numeric(
+        df[auc_vol_col],
+        errors="coerce"
+    )
+
+if mean_prob_col is not None:
+    table["Mean Spike Probability"] = pd.to_numeric(
+        df[mean_prob_col],
+        errors="coerce"
+    )
+
+if predicted_spikes_col is not None:
+    table["Predicted Spikes"] = pd.to_numeric(
+        df[predicted_spikes_col],
+        errors="coerce"
+    )
+
+if actual_spikes_col is not None:
+    table["Actual Spikes"] = pd.to_numeric(
+        df[actual_spikes_col],
+        errors="coerce"
+    )
+
+
+# ------------------------------------------------------------
+# 6. Remove incomplete rows and sort
+# ------------------------------------------------------------
+table = (
+    table
+    .dropna(subset=["Shrinkage (λ)"])
+    .sort_values("Shrinkage (λ)")
+    .reset_index(drop=True)
+)
+
+
+# ------------------------------------------------------------
+# 7. Identify preferred lambda
+# ------------------------------------------------------------
+# Primary criterion:
+# lower MAE/RMSE and stronger probabilistic discrimination.
+#
+# The validation results should be interpreted jointly rather
+# than choosing a value from the test period.
+
+best_mae_lambda = table.loc[
+    table["MAE"].idxmin(),
+    "Shrinkage (λ)"
+]
+
+best_rmse_lambda = table.loc[
+    table["RMSE"].idxmin(),
+    "Shrinkage (λ)"
+]
+
+
+if "ROC-AUC (Probability)" in table.columns:
+
+    best_auc_lambda = table.loc[
+        table["ROC-AUC (Probability)"].idxmax(),
+        "Shrinkage (λ)"
+    ]
+
+else:
+
+    best_auc_lambda = np.nan
+
+
+# ------------------------------------------------------------
+# 8. Round presentation values
+# ------------------------------------------------------------
+for column in table.columns:
+
+    if column == "Shrinkage (λ)":
+        table[column] = table[column].round(2)
+
+    elif column in [
+        "Predicted Spikes",
+        "Actual Spikes"
+    ]:
+        table[column] = table[column].round().astype(int)
+
+    else:
+        table[column] = table[column].round(6)
+
+
+# ------------------------------------------------------------
+# 9. Save CSV
+# ------------------------------------------------------------
+csv_path = (
+    RESULTS_DIR
+    / "table_4_8_bvar_lambda_validation.csv"
+)
+
+table.to_csv(
+    csv_path,
+    index=False
+)
+
+
+# ------------------------------------------------------------
+# 10. Save LaTeX
+# ------------------------------------------------------------
+latex_path = (
+    RESULTS_DIR
+    / "table_4_8_bvar_lambda_validation.tex"
+)
+
+latex_table = table.to_latex(
+    index=False,
+    escape=False,
+    caption="BVAR Shrinkage Validation Results",
+    label="tab:4.8"
+)
+
+latex_path.write_text(
+    latex_table,
+    encoding="utf-8"
+)
+
+
+# ------------------------------------------------------------
+# 11. Print output
+# ------------------------------------------------------------
+print("\n" + "=" * 80)
+print("[TABLE 4.8 HERE]")
+print("=" * 80)
+
+print("BVAR Shrinkage Validation Results")
+
+print("\n")
+print(table.to_string(index=False))
+
+print("\nBest lambda by MAE:")
+print(best_mae_lambda)
+
+print("\nBest lambda by RMSE:")
+print(best_rmse_lambda)
+
+if not np.isnan(best_auc_lambda):
+    print("\nBest lambda by ROC-AUC (Probability):")
+    print(best_auc_lambda)
+
+print("\nCSV saved to:")
+print(csv_path)
+
+print("\nLaTeX saved to:")
+print(latex_path)
+
+print("\nCompleted successfully.")
